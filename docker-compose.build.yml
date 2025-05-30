@@ -14,16 +14,16 @@ services:
 #      - BUILD_EXTENSIONS_LIVE="silero_tts whisper_stt" # Install named extensions during every container launch. THIS WILL SIGNIFICANLTLY SLOW LAUNCH TIME.
     ports:
       - 7860:7860  # Default web port
-#      - 5000:5000  # Default API port
+      - 5000:5000  # Default API port
 #      - 5005:5005  # Default streaming port
 #      - 5001:5001  # Default OpenAI API extension port
     volumes:
-      - ./config/characters:/app/characters
-      - ./config/loras:/app/loras
-      - ./config/models:/app/models
-      - ./config/presets:/app/presets
-      - ./config/prompts:/app/prompts
-      - ./config/training:/app/training
+      - ./config/characters:/workspace/characters
+      - ./config/loras:/workspace/loras
+      - ./config/models:/workspace/models
+      - ./config/presets:/workspace/presets
+      - ./config/prompts:/workspace/prompts
+      - ./config/training:/workspace/training
 #      - ./config/extensions:/app/extensions  # Persist all extensions
 #      - ./config/extensions/silero_tts:/app/extensions/silero_tts  # Persist a single extension
     logging:
