@@ -10,19 +10,19 @@ services:
     init: true  # Runs an init process (PID 1) that forwards signals and reaps processes
     ports:
       - 7860:7860  # Default web port
-#      - 5000:5000  # Default API port
+      - 5000:5000  # Default API port
 #      - 5005:5005  # Default streaming port
     volumes:
       - ./config/cache:/root/.cache  # WARNING: Libraries may save large files here!
-      - ./config/characters:/app/user_data/characters
-      - ./config/grammars:/app/user_data/grammars
-      - ./config/instruction-templates:/app/user_data/instruction-templates
-      - ./config/loras:/app/user_data/loras
-      - ./config/logs:/app/user_data/logs  # Persist and access the chat logs
-      - ./config/models:/app/user_data/models  # WARNING - very large files!
-      - ./config/presets:/app/user_data/presets
-      - ./config/prompts:/app/user_data/prompts
-      - ./config/training:/app/user_data/training
+      - ./config/characters:/workspace/characters
+      - ./config/grammars:workspace/grammars
+      - ./config/instruction-templates:/workspace/instruction-templates
+      - ./config/loras:/workspace/loras
+      - ./config/logs:/workspace/logs  # Persist and access the chat logs
+      - ./config/models:/workspace/models  # WARNING - very large files!
+      - ./config/presets:/workspace/presets
+      - ./config/prompts:/workspace/prompts
+      - ./config/training:/workspace/training
 #      - ./config/extensions:/app/extensions  # Persist all extensions
 #      - ./config/extensions/coqui_tts:/app/extensions/coqui_tts  # Persist a single extension
     logging:
