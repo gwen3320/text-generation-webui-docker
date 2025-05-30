@@ -18,12 +18,12 @@ services:
 #      - 5005:5005  # Default streaming port
 #      - 5001:5001  # Default OpenAI API extension port
     volumes:
-      - ./config/characters:/workspace/characters
-      - ./config/loras:/workspace/loras
-      - ./config/models:/workspace/models
-      - ./config/presets:/workspace/presets
-      - ./config/prompts:/workspace/prompts
-      - ./config/training:/workspace/training
+      - /workspace/characters:/app/user_data/characters
+      - /workspace/loras:/app/user_data/loras
+      - /workspace/models:/app/user_data/models
+      - /workspace/presets:/app/user_data/presets
+      - /workspace/prompts:/app/user_data/prompts
+      - /workspace/training:/app/user_data/training
 #      - ./config/extensions:/app/extensions  # Persist all extensions
 #      - ./config/extensions/silero_tts:/app/extensions/silero_tts  # Persist a single extension
     logging:
